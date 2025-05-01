@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 85: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    with move
+File "game/script.rpy", line 126: expected 'comma or end of line' not found.
+    with Dissolve(4.0)
     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May  1 15:00:09 2025
+Thu May  1 19:46:17 2025
