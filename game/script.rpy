@@ -1,10 +1,9 @@
-﻿
-
-define m = Character("[player_name]", color='#004400')
+﻿define m = Character("[player_name]", color='#004400')
 define e = Character("Աղջիկ", color='#440000')
 define s = Character("Աղջիկ", color='#440044')
 define f = Character("Զինվոր", color='#225522')
 define g = Character("Գեներալ", color='#111111')
+define gexam = Character("Գեղամ", color='#112211')
 
 image bg mybackground = "1stbackground.png"
 image bg my2bg = "2bg.jpg"
@@ -22,6 +21,10 @@ image bg black = "black.jpg"
 image girl handcuffed = "girl.png"
 image girl2 handcuffed = "girl2.png"
 image soldier still = "soldier.png"
+image bg hug = "hug.jpg"
+image bg no_water = "no_water.jpg"
+image bg a_well = "a_well.jpg"
+image bg warning = "warning.jpg"
 
 label start:
 
@@ -93,8 +96,8 @@ label start:
             scene bg black
             with Dissolve(3.0)
             m "․․․անտանելի ժամանակներ էն․․․"
-
             $ girl_killed = True
+
         "Գերի վերցնել":
             m "Մենք նրա շուրջը, ամենքս տարբեր տեղեր էինք նստել։"
 
@@ -163,9 +166,22 @@ label start:
     s "..."
     menu:
         "Սպանել":
-            "sdf"
+            play audio "krakoc.mp3"
+            ""
         "Մատնել":
-            "sdf"
+            if girl_killed == True:
+                g "Սպանել էտ աղջկան"
+                play audio "krakoc.mp3"
+            if girl_killed == False:
+                scene bg black
+                with Dissolve(1.0)
+
+                show girl handcuffed at left
+                show girl2 handcuffed at right
+
+                m "Երբ առաջին աղջիկը տեսավ երկրորդին, նրանք վազեցին իրար գրկեցին։"
+                m "Նրանց աչքերը լի էին արցունքներով, բայց դրանց խորքում՝ փոքրիկ հույս կար։"
+                m "Նրանք գրկում էին միմյանց, ասես մոռացած լինեն ամեն ինչ։"
         "Մոռանալուն տալ":
             show girl2 handcuffed:
                 linear 0.7 xpos -0.3
@@ -176,6 +192,13 @@ label start:
                 linear 0.7 xpos 0.1
             m "Մի գուցէ գոնե էս մեկին հնարավոր լինի փրկել։"
             m "Այսինքն հնարավոր լինի գոնե մի քանի օրը մեկ հաց ու ջուր բերել էս տուն․․․"
+
+    scene bg no_water
+    "Երբ հավաքվեցինք մի տեղ ու բերաններիս մածուկված փոշին էինք թքում, նկատեցինք, որ բոլորիս ջրի տափաշշերն էլ դատարկ են: Գյուղը տակն ու վրա էինք անում, ջուր չկար:"
+    scene bg a_well
+    gexam "Ջուր... Աստված իմ, ջուր... Մոռացել էի նույնիսկ ինչ համ ունի..."
+    scene bg warning
+    g "Ոչ ոք չխմի էդ ջրից։ Հնարավոր է, որ թշնամին է թունավորել, որպեսզի հեշտ հաղթանակ տանի։ «Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք:"
 
 
 

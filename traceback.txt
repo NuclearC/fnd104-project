@@ -1,30 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 129, in script
-    with Fade(4.0)
-TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
+  File "game/script.rpy", line 168, in script
+    if girl_killed = True:
+SyntaxError: invalid syntax (game/script.rpy, line 168)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 129, in script
-    with Fade(4.0)
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/ast.py", line 1374, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/exports/statementexports.py", line 257, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/display/core.py", line 1581, in do_with
-    return self.interact(trans_pause=True,
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/display/core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/display/core.py", line 2669, in interact_core
-    trans = instantiate_transition(None, old_root, layers_root)
-  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/display/core.py", line 2578, in instantiate_transition
-    trans = self.ongoing_transition[layer](
-TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
+  File "game/script.rpy", line 168, in script
+    if girl_killed = True:
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+    raise e
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
+    raise orig_e
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 168)
 
-Linux-6.14.4-arch1-2-x86_64-with-glibc2.41 x86_64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Armenian project 1.0
-Thu May  1 19:47:34 2025
+Thu May  1 20:59:50 2025
