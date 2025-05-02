@@ -25,7 +25,7 @@ image bg hug = "hug.jpg"
 image bg no_water = "no_water.jpg"
 image bg a_well = "a_well.jpg"
 image bg warning = "warning.jpg"
-
+image bg axjkan_jur_berel = "axjkan_jur_berel.jpg"
 label start:
 
     scene bg black
@@ -35,6 +35,7 @@ label start:
     $ player_name = renpy.input("Ձեր անունն է։")
     
     $ girl_killed = False
+    $ girl2_hog_tanel = False
 
     scene bg mybackground
     with Dissolve(2.0)
@@ -192,16 +193,30 @@ label start:
                 linear 0.7 xpos 0.1
             m "Մի գուցէ գոնե էս մեկին հնարավոր լինի փրկել։"
             m "Այսինքն հնարավոր լինի գոնե մի քանի օրը մեկ հաց ու ջուր բերել էս տուն․․․"
+            $ girl2_hog_tanel = True
+
+
+
+    if girl2_hog_tanel == True:
+        scene bg axjkan_jur_berel
+        "ddd"
 
     scene bg no_water
     "Երբ հավաքվեցինք մի տեղ ու բերաններիս մածուկված փոշին էինք թքում, նկատեցինք, որ բոլորիս ջրի տափաշշերն էլ դատարկ են: Գյուղը տակն ու վրա էինք անում, ջուր չկար:"
     scene bg a_well
     gexam "Ջուր... Աստված իմ, ջուր... Մոռացել էի նույնիսկ ինչ համ ունի..."
     scene bg warning
-    g "Ոչ ոք չխմի էդ ջրից։ Հնարավոր է, որ թշնամին է թունավորել, որպեսզի հեշտ հաղթանակ տանի։ «Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք:"
-
-
-
+    g "Ոչ ոք չխմի էդ ջրից։ Հնարավոր է, որ թշնամին է թունավորել, որպեսզի հեշտ հաղթանակ տանի։ Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք:"
+    menu:
+        "Խմել ջուր":
+            if girl_killed == False:
+                show girl handcuffed
+                s "Ջուրը եռացրեք հետո Խմեք, որպեսզի չթունավորվեք"
+            if girl_killed == True:
+                scene bg black
+                "Բոլորը թունավորվեցին և մահացան"
+        "Սպասել":
+            "՞՞՞՞՞"
     return
 
 label dead_1:

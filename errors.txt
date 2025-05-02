@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 168: if statement expects a non-empty block.
-    if girl_killed = True:
-                          ^
+File "game/script.rpy", line 203: expected statement.
+    axjkan_jur_berel
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May  1 20:58:11 2025
+Fri May  2 13:11:49 2025
