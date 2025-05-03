@@ -1,28 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 168, in script
-    if girl_killed = True:
-SyntaxError: invalid syntax (game/script.rpy, line 168)
+  File "game/script.rpy", line 256, in script
+    m "Մի քանի օր էլ անցավ..."
+NameError: name 'player_name' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 168, in script
-    if girl_killed = True:
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1216, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1153, in py_compile
+  File "game/script.rpy", line 256, in script
+    m "Մի քանի օր էլ անցավ..."
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1454, in __call__
+    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
     raise e
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1090, in py_compile
-    raise orig_e
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1082, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/script.rpy, line 168)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'player_name' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Armenian project 1.0
-Thu May  1 20:59:50 2025
+Sat May  3 16:44:14 2025

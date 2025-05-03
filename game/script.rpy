@@ -6,6 +6,7 @@ define g = Character("Գեներալ", color='#111111')
 define gexam = Character("Գեղամ", color='#112211')
 define k2 = Character("Կապավոր 2", color='#660055')
 define k1 = Character("Կապավոր 1", color='#006655')
+define Shahen = Character("Շահեն", color='#006655')
 
 image bg mybackground = "1stbackground.png"
 image bg my2bg = "2bg.jpg"
@@ -15,7 +16,7 @@ image bg my5bg = "5bg.jpg"
 image bg qartez = "qartez.jpg"
 image bg ddum = "ddum.jpg"
 image bg axjik = "axjik.jpg"
-image bg hraman = "hraman.jpg"
+image bg hraman = "hraman.png"
 image bg hardzakum = "hardzakum.jpg"
 image bg shun = "shun.png"
 image bg paharaniAxjik = "paharaniAxjik.jpg"
@@ -32,10 +33,15 @@ image bg kap = "kap.jpg"
 image bg katu_shun = "katu_shun.jpg"
 image bg gisher = "gisher.jpg"
 image bg parek = "parek.jpg"
+image bg Serob = "Serob.png"
+image bg hac_apur = "hac_apur.jpg"
+image bg dzi_esh = "dzi_esh.jpg"
+image bg lusankarvum = "lusankarvum.jpg"
+image bg Shahen = "Shahen.jpg"
+image bg post = "post.jpg"
+
 
 label start:
-
-
     scene bg black
     with Dissolve(2.0)
     "Եկեղեցին արդեն հեռվից երևում էր․․․"
@@ -152,6 +158,7 @@ label start:
     g "Ստուգեք տները մեկ առ մեկ, թաքնվածներ մնացած չլինեն:" 
 
     scene bg shun
+    play audio "barking.mp3"
     with Dissolve(4.0)
     m "Նրանց շները պատառոտում էին մեզ, ամեն կողպեքը կախած փակ դռան ետեւը նրանք իրենց գամփռներին էին դրել..."
     play audio "krakoc.mp3"
@@ -172,7 +179,7 @@ label start:
         linear 0.7 xpos 0.3
     m "Էս աղջիկը այնքան վախեցած էր, նույնիսկ չէր կարողանում մի բառ արտասանել․․․"
     s "..."
-    s "..."
+
     menu:
         "Սպանել":
             play audio "krakoc.mp3"
@@ -248,6 +255,8 @@ label start:
             k2 "Գիշերայինով դուրս գամ, գիշերային գիծը միշտ էլ ազատ են թողնում, յոթանասունինն ազատ կլինի:"
             m "Հրամանատարը վեջապես վերադարձավ և տեղի տվեց, միայն թե եռացրած ջրի առաջին բաժակն ինքը խմեց։"
 
+
+
     scene bg hardzakum
     m "Մի քանի օր էլ անցավ..."
     scene bg katu_shun
@@ -257,16 +266,44 @@ label start:
     m "Այդ կենդանիների սոված ձայներն ու ճիչերը մեզ նյարդայնացնում էին։"
 
     scene bg parek
+    play audio "gisherayin.mp3"
     m "Գիշերը գյուղում պարեկություն անողներիս եւ բազայի շուրջը պահակակետի
        կանգնածներիս համար խախտվում էր բնական լռությունը:"
     m "Միջավայրի աղմուկն ու թշնամու ոտնաձայները շփոթում էինք, չէինք կարողանում
        տարորոշել:"
 
     scene bg gisher
+    play audio "door.mp3"
     m "Գիշերվա հետ հարավից ու հյուսիսից փչող քամին ծեծում, շրխկացնում ու
        ճռռացնում էր հարյուրավոր տների բաց ու փակ դռներն ու լուսամուտները:"
+    m "Ինչքան էլ մենք գիտեինք, որ հիմա թիկունքում շրխկալու է դուռն ու
+        լուսամուտը, այնուամենայնիվ, վեր էինք թռչում։"
+    # axjiknery paxnen stex te che ???
+
+    scene bg Serob
+    m "Սերոբին այդպես էլ չգտանք, Սերոբին չե՞ք տեսել, կինն էլ երկու ամսից երեխա է ունենալու: Առաջին անգամն ինձ հետ էր եկել:"
+
+    scene bg hac_apur
+    m "Մենք ուզում էինք, որ նա գնա, թողնի ու գնա, ապուր տվեցինք, հացը թաթախելով էր ուտում: "
+    f "Դե, ես գնամ, որ տեսնեք, իմաց արեք: "
+    scene bg dzi_esh
+    m "Իրենց թաքստոցներից գյուղի ամայի փողոցները լցվեցին,սմբակները ջարդոտված ու մազաթափ ավանակներ, ջորիներ, պառաված ձիեր։"
+    scene bg lusankarvum
+    m "Մենք հեծնում էինք ու նրանց դողդոջուն մեջքների վրա հարմար կեցվածք ընդունած, կրծքներս ուռեցրած` լուսանկարվում:"
+    scene bg Shahen
+    Shahen "Մեր գիշերատեղի դիմացի տունը պիտի հրկիզենք։ Այդպես էլ դիրքի կանգնել հնարավոր չէ: Կտուրը կղմինդրից է,
+    հենց դրանք մի թեթեւ տեղաշարժ են կատարում, ոնց որ այնտեղ մարդ ման գա: Էդ տունը չպիտի մնա, կմիամտվենք, ու մի օր թշնամին կբարձրանա կտուր"
+    g "Չէ, այդպիսի բան անել պետք չէ: Չանեք եւ` վերջ։"
+    scene bg post
+    m "Ներսումս մեկը կա, ես նրան չեմ տեսել, բայց նրա հետ մի օր կգնամ կիսավեր տաճարը, արյան ավազանի մոտ"
+    gexam "Նա քո զոհը կդառնա"
+    m "Ոչ, ոչ, նա ոչ մի փորձության չի դիմանա ու ինձ կմատնի"
+    gexam "Թուլություն է, երակները լցնելու... թե չէ դեռ չեղածը դու ինչի՞ց ես իմանում, որ պատահելու է..."
+    # dzayn en lsum u ....
+
 
     return
+
 
 label dead_1:
     "ur dead"
