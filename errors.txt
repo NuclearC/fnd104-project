@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 383: Say menuitems and captions may not exist in the same menu.
-    play audio "krakoc.mp3"
-                           ^
+File "game/script.rpy", line 429: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    scene bg kap
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May  4 12:15:04 2025
+Sun May  4 21:20:11 2025

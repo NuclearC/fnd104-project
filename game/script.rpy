@@ -43,6 +43,10 @@ image bg Shahen = "Shahen.jpg"
 image bg post = "post.jpg"
 image bg herag = "herag.jpg"
 image bg antar = "antar.png"
+image bg lragroxuhi = "lragroxuhi.jpg"
+image bg gini = "gini.jpg"
+image bg tun_varel = "tun_varel.jpg"
+image bg varvac = "varvac.png"
 
 default girl_killed = False
 default girl2_killed = False
@@ -308,7 +312,6 @@ label start:
         լուսամուտը, այնուամենայնիվ, վեր էինք թռչում։"
 
     stop sound fadeout 2.0
-    # axjiknery paxnen stex te che ???
 
     scene bg Serob
     m "Սերոբին այդպես էլ չգտանք, Սերոբին չե՞ք տեսել, կինն էլ երկու ամսից երեխա է ունենալու: Առաջին անգամն ինձ հետ էր եկել:"
@@ -400,17 +403,43 @@ label fight:
     menu:
         "Կրակել և սպանել":
             play audio "krakoc.mp3"
+            jump tun_varel
         "Փորձել գերի վերցնել, որպեսզի ինֆորմացիա իմանան։":
             play audio "krakoc.mp3"
             play audio "krakoc.mp3"
             "Հետախույզը արագորեն փոխում է իրավիճակը և սպանում երկուսին էլ։"
             "Ur dead, game end"
-    return;
+    return
+
 label tun_varel:
+
+    scene bg tun_varel
+    karo "Ավելի լավ է վառենք տունը, քան թե մի օր թշնամին հարձակվի ու չնկատենք։"
+
+    scene bg kap
+    play sound "radio.mp3"
+    g "Գերեզմանոցը հանկարծ չպղծել, վաղը Ֆրանսիայից լրագրող է գալու։"
+    k1 "....կարո՞ղ է տեսել էք Սերոբին։ Ձեր հետ էր․․․"
+
+    scene bg lragroxuhi
+    "Ասաց. «Թուզ
+    տվեք», տղաները թուզ բերեցին: Ասաց. «Նուռ տվեք», տղաները նուռ քաղեցին:
+    Ասաց. «Խնձոր տվեք», տղաները հափշտակված խնձոր բերեցին: Ասաց.
+    «Խաղող տվեք», տղաները վազերը ճռաքաղ արին"
+    scene bg kap
+    play sound "radio.mp3"
+    "Միացրինք ռադիոկայանը` շտաբից սնունդ պահանջելու համար ու մեկը դարձյալ միապաղաղ ձայնով, ալիքների մեջ Սերովբեին էր որոնում։"
+    k1 "....կարո՞ղ է տեսել էք Սերոբին։"
+    m "Հաց ու ծխախոտ չուզած` շտապով անջատեցինք կայանը ու նստեցինք սեղանի առաջ"
+    scene bg gini
+    g "Մենք հասանք երազների հովիտ, դու ի՞նչ ես կարծում, արդեն հասե՞լ ենք"
+    scene bg varvac
+    m "Լուսանում էր, արդեն չորրորդ օրն էր` մենք հրկիզել
+       էինք մեր դիմացի կղմինդրե տունը, իսկ աղավնիները չորս օր է երկնքից
+       կախված, առանց վայրէջքի, շրջապտույտ ու շրջապտույտ պտտվում էին նրա
+       վրա:"
     return
 
 label dead_1:
     "ur dead"
     return
-
-    "sdfas dfdf"
