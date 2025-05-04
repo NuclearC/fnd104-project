@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 362: expected simple expression
-    stop audio fadeout
-                      ^
-
-File "game/script.rpy", line 366: expected simple expression
-    stop audio fadeout
-                      ^
+File "game/script.rpy", line 383: Say menuitems and captions may not exist in the same menu.
+    play audio "krakoc.mp3"
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May  4 12:02:12 2025
+Sun May  4 12:15:04 2025
