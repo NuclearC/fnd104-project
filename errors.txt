@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 281: expected '=' not found.
-    image bg serob
-                  ^
+File "game/script.rpy", line 362: expected simple expression
+    stop audio fadeout
+                      ^
 
-File "game/script.rpy", line 284: expected '=' not found.
-    image bg hac_apur
-                     ^
+File "game/script.rpy", line 366: expected simple expression
+    stop audio fadeout
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  3 18:12:34 2025
+Sun May  4 12:02:12 2025

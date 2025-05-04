@@ -1,41 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 256, in script
-    m "Մի քանի օր էլ անցավ..."
-NameError: name 'player_name' is not defined
+  File "game/script.rpy", line 358, in script
+    if girl2_killed == False and girl2_geri == False:
+  File "game/script.rpy", line 358, in <module>
+    if girl2_killed == False and girl2_geri == False:
+NameError: name 'girl2_geri' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 256, in script
-    m "Մի քանի օր էլ անցավ..."
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1454, in __call__
-    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+  File "game/script.rpy", line 358, in script
+    if girl2_killed == False and girl2_geri == False:
+  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/ast.py", line 1856, in execute
+    if renpy.python.py_eval(condition):
+  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/python.py", line 1218, in py_eval
     return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\ARSEN\Desktop\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+  File "/home/armen/prog/renpy-8.3.7-sdk/renpy/python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'player_name' is not defined
+  File "game/script.rpy", line 358, in <module>
+    if girl2_killed == False and girl2_geri == False:
+NameError: name 'girl2_geri' is not defined
 
-Windows-10-10.0.26100 AMD64
+Linux-6.14.4-arch1-2-x86_64-with-glibc2.41 x86_64
 Ren'Py 8.3.7.25031702
 Armenian project 1.0
-Sat May  3 16:44:14 2025
+Sun May  4 11:58:39 2025
