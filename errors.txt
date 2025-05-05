@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 429: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    scene bg kap
-    ^
+File "game/script.rpy", line 460: if statement expects a non-empty block.
+    if girl_killed == True and girl2_killed == True:
+                                                    ^
+
+File "game/script.rpy", line 462: expected statement.
+    elif girl_killed == True and girl2_killed == False:
+                     ^
+
+File "game/script.rpy", line 464: expected statement.
+    elif girl_killed == False and girl2_killed == True:
+                     ^
+
+File "game/script.rpy", line 466: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May  4 21:20:11 2025
+Mon May  5 16:01:25 2025

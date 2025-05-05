@@ -8,14 +8,16 @@ define k2 = Character("Կապավոր 2", color='#660055')
 define k1 = Character("Կապավոր 1", color='#006655')
 define Shahen = Character("Շահեն", color='#006655')
 define karo = Character("Կարո", color='#0000aa')
+define serob = Character("Սերովբե", color='#dddddd')
 
+image bg skizb = "skizb.jpg"
 image bg mybackground = "1stbackground.png"
 image bg my2bg = "2bg.jpg"
 image bg my3bg = "3bg.jpg"
 image bg my4bg = "4bg.jpg"
 image bg my5bg = "5bg.jpg"
 image bg qartez = "qartez.jpg"
-image bg ddum = "ddum.jpg"
+image bg qnac = "qnac.jpg"
 image bg axjik = "axjik.jpg"
 image bg hraman = "hraman.png"
 image bg hardzakum = "hardzakum.jpg"
@@ -26,6 +28,7 @@ image girl handcuffed = "girl.png"
 image kapavor talk = "kapavor.png"
 image girl2 handcuffed = "girl2.png"
 image soldier still = "soldier.png"
+image serob still = "serob.jpg"
 image bg hug = "hug.jpg"
 image bg no_water = "no_water.jpg"
 image bg a_well = "a_well.jpg"
@@ -47,6 +50,9 @@ image bg lragroxuhi = "lragroxuhi.jpg"
 image bg gini = "gini.jpg"
 image bg tun_varel = "tun_varel.jpg"
 image bg varvac = "varvac.png"
+image bg antar0 = "antar0.jpg"
+image bg gyuxi_hardzakum = "gyuxi_hardzakum.jpg"
+image bg edem = "edem.jpg"
 
 default girl_killed = False
 default girl2_killed = False
@@ -54,7 +60,7 @@ default girl2_hog_tanel = False
 default girl2_geri = False
 
 label start:
-    scene bg black
+    scene bg skizb
     with Dissolve(2.0)
     "Եկեղեցին արդեն հեռվից երևում էր․․․"
 
@@ -88,7 +94,7 @@ label start:
             jump dead_1
 
         "Չարժե ռիսկի դիմել․․․":
-            scene bg ddum
+            scene bg qnac
             "Դադար առանք ու քնեցինք դեղին դդումների դաշտում։"
             scene bg qartez
             "Լուսածագին գեներալներն ու հրամանատարները ճշտեցին գյուղի դիրքը։"
@@ -241,7 +247,7 @@ label start:
     scene bg a_well
     gexam "Ջուր... Աստված իմ, ջուր... Մոռացել էի նույնիսկ ինչ համ ունի..."
     scene bg warning
-    g "Ոչ ոք չխմի էդ ջրից։ Հնարավոր է, որ թշնամին է թունավորել, որպեսզի հեշտ հաղթանակ տանի։ Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք:"
+    g "Ոչ ոք չխմի էդ ջրից։ Հնարավոր է, որ թշնամին է թունավորել, որպեսզի հեշտ հաղթանակ տանի:"
     menu:
         "Խմել ջուր":
             if girl_killed == False:
@@ -264,16 +270,17 @@ label start:
 
             if girl_killed == True:
                 scene bg black
+                play sound "womp.mp3"
                 "Բոլորը թունավորվեցին և մահացան"
                 return
 
         "Սպասել":
-            # scene bg no_water
-            # m "Հրամանատարը գնացել էր հավաքի, որպեսզի քննարկեին հարձակման պլանները։"
-            m "Ծարավը սաստկանում էր, մենք ջուր էինք ուզում։"
+            scene bg no_water
+            m "Անցավ մի քանի օր,ծարավը սաստկանում էր, մենք ջուր էինք ուզում։"
+            m "Հրամանատարը գնացել էր հավաքի, որպեսզի քննարկեին հարձակման պլանները։"
 
-            # show soldier still at right
-            # f "Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք"
+            show soldier still at right
+            f "Համբերեք, կարող է թիկունքից ջուր են հասցնում, կապով կպարզենք"
 
             scene bg kap
             show soldier still at right
@@ -379,7 +386,7 @@ label start:
         with Dissolve(1.0)
         m "․․․չափազանց անտանելի ժամանակներ էն․․․"  
         
-        scene bg antar
+        scene bg antar0
         with Dissolve(1.0)
         karo "Էդ ձեները ոնց որ անտառի կողմից էին գալիս․․․"
     else:
@@ -438,8 +445,26 @@ label tun_varel:
        էինք մեր դիմացի կղմինդրե տունը, իսկ աղավնիները չորս օր է երկնքից
        կախված, առանց վայրէջքի, շրջապտույտ ու շրջապտույտ պտտվում էին նրա
        վրա:"
-    return
+    jump ending
 
 label dead_1:
-    "ur dead"
+    scene bg gyuxi_hardzakum
+    m "Մենք վազեցինք դեպի գյուղը։ Բնակիչները արդեն լքել էին, բայց զինվորները չեն հասցրել։"
+    play sound "womp.mp3"
+    "Համբերությունը լավ բան է+։"
+    return
+
+
+label ending:
+    scene bg edem
+    if girl_killed == True and girl2_killed == True:
+        "a"
+    elif girl_killed == True and girl2_killed == False:
+        "b"
+    elif girl_killed == False and girl2_killed == True:
+        "c"
+    else:
+        show serob still at left
+        "asdaf"
+
     return
