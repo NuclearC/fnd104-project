@@ -1,5 +1,5 @@
 ﻿define m = Character("[player_name]", color='#004400')
-define e = Character("Աղջիկ", color='#440000')
+define e = Character("Աղջիկ զինվոր", color='#440000')
 define s = Character("Աղջիկ", color='#440044')
 define f = Character("Զինվոր", color='#225522')
 define g = Character("Գեներալ", color='#111111')
@@ -8,7 +8,7 @@ define k2 = Character("Կապավոր 2", color='#660055')
 define k1 = Character("Կապավոր 1", color='#006655')
 define Shahen = Character("Շահեն", color='#006655')
 define karo = Character("Կարո", color='#0000aa')
-define serob = Character("Սերովբե", color='#dddddd')
+define serob = Character("Սերովբե", color='#101010')
 
 image bg skizb = "skizb.jpg"
 image bg mybackground = "1stbackground.png"
@@ -460,7 +460,27 @@ label ending:
     scene bg edem
     with Dissolve(1.0)
     if girl_killed == True and girl2_killed == True:
-        "a"
+        show serob still at left:
+            xalign 0.3
+            zoom 1.0
+        show girl2 handcuffed at right:
+            xalign 0.6
+            yalign 1.0
+            zoom 0.6
+        show girl handcuffed at right:
+            xalign 1.1
+            yalign 1.0
+            zoom 0.6
+        s "Որտե՞ղ եմ ես..."
+        e "Չգիտեմ… բայց սա կռվի դաշտը չէ։"
+        serob "Սա հիշողության ու մոռացության միջև ընկած տեղ է։ Այստեղ ապահով եք։"
+        s "Դու՞ ես մարդկանց այստեղ բերողը։"
+        serob "Ոչ։ Ես հանդիպում եմ նրանց երբ վերջին ձայնը լռում է, և սիրտը հանգչում։"
+        e "Ինչու՞ մենք։ Նա դեռ երեխա է։ Ես պետք է…"
+        serob "Դուք երկուսդ էլ կրակից փրկվեցիք։ Ոչ թե որովհետև այդպես պիտի լիներ, այլ որովհետև աշխարհը շեղվել է։"
+        s "Բայց հիմա միասին ենք։"
+        e "Այո։ Դա ամենակարևորն է։"
+
     elif girl_killed == False and girl2_killed == True:
         show serob still at left:
             xalign 0.3
@@ -484,6 +504,6 @@ label ending:
 
     else:
         show serob still
-        "asdaf"
+        "..."
 
     return
