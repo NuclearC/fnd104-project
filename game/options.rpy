@@ -12,13 +12,13 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Armenian project")
+define config.name = _("Հողի դողը")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -30,6 +30,12 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+Կազմված է Հայաստանի Ամերիկյան Համալսարանի FND104 դասի համար
+
+Այս նախագիծը կառուցված է ինտերակտիվ վիզուալ նովելի ձևաչափով՝ օգտագործելով նախապես ընտրված «Հողի դողը» գեղարվեստական տեքստը՝ այն կենդանացնելու համար գրաֆիկական ներկայացմամբ և օգտատիրոջ կատարած ընտրություններով։ 
+
+Նախագծի թեման կենտրոնանում է մարդու ընտրությունների և դրանց հետևանքների վրա պատերազմական իրավիճակում։ Նպատակն ու նշանակությունն է խաղացողին տեսական կերպով ծանոթացնել վերոնշյալ գեղարվեստական տեքստին, ինչպես նաև թույլ տալ նրան կատարել զանազան ընտրություններ այդ ընթացքում, որոնք անդրադառնում են պատվածքի հետագա ընթացքին։ 
+
 """)
 
 
