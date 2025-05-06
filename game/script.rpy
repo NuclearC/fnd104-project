@@ -380,6 +380,8 @@ label start:
         karo "Էհ, երանի ուշադրությանդ․․․"
         karo "Էն օրը այդպես ձայներ լսեցինց, գնացինք տեսանք փոքր աղջիկ էր տներից մեկում․․․"
         karo "Դե հրամանն էր մարդ ողջ չթողել․․․"
+
+        $ girl2_killed = True
         
         stop sound fadeout 1.0
         scene bg black
@@ -402,8 +404,6 @@ label start:
 
             jump tun_varel
 
-    return
-
 label fight: 
     scene bg antar
     "Զինվորները նկատում են թշնամու հետախույզի։"
@@ -416,7 +416,7 @@ label fight:
             play audio "krakoc.mp3"
             "Հետախույզը արագորեն փոխում է իրավիճակը և սպանում երկուսին էլ։"
             "Ur dead, game end"
-    return
+            return
 
 label tun_varel:
 
@@ -451,20 +451,39 @@ label dead_1:
     scene bg gyuxi_hardzakum
     m "Մենք վազեցինք դեպի գյուղը։ Բնակիչները արդեն լքել էին, բայց զինվորները չեն հասցրել։"
     play sound "womp.mp3"
-    "Համբերությունը լավ բան է+։"
+    "Համբերությունը լավ բան է։"
+    "Դուք սպանեցիք ձեր ողջ ջոկատը:"
     return
 
 
 label ending:
     scene bg edem
+    with Dissolve(1.0)
     if girl_killed == True and girl2_killed == True:
         "a"
-    elif girl_killed == True and girl2_killed == False:
-        "b"
     elif girl_killed == False and girl2_killed == True:
-        "c"
+        show serob still at left:
+            xalign 0.3
+            zoom 1.0
+        show girl2 handcuffed at right:
+            xalign 0.6
+            yalign 1.0
+            zoom 0.6
+        s "Որտե՞ղ եմ ես..."
+        serob "Մի տեղ, որտեղ աղմուկը վերջանում է, իսկ լռությունն սկսվում է։ Այստեղ վախենալ պետք չէ։"
+        s "Վատ բաներն իրո՞ք անցել են։"
+        serob "Այո։ Ամբողջ աղմուկը մնացել է հետևում։"
+        s "Ես չէի ուզում գնալ։ Պարզապես անկողնու տակ էի թաքնվել։"
+        serob "Գիտեմ։ Երբեմն աշխարհը նույնիսկ ամենահանգիստ սրտերին է շուտ հեռացնում։"
+        s "Դուք… հրեշտա՞կ եք։"
+        serob "Պարզապես մեկը, ով սպասում է այստեղ։ Ես պարզապես լսում եմ։"
+        s "Մայրիկիս նորից կտեսնե՞մ։"
+        serob "Մի օր։ Այստեղ ժամանակը այլ կերպ է անցնում։ Բայց մինչ այդ՝ դու երբեք մենակ չես լինի։"
+        s "Այստեղ լուռ է… բայց ոչ սարսափելի։"
+        serob "Դա որովհետև քո լույսն ես բերել քեզ հետ։"
+
     else:
-        show serob still at left
+        show serob still
         "asdaf"
 
     return
